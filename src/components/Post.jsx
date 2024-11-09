@@ -3,15 +3,15 @@ import { Comment } from './Comment';
 import { Avatar } from './Avatar';
 import styles from './Post.module.css';
 
-export function Post() {
+export function Post({author}) {
     return(
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src="https://github.com/maykbrito.png"/>
+                    <Avatar src={author.avatarUrl} />
                     <div className={styles.authorInfo}>
-                        <strong>Mayk Brito</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
                 <time title='8 de novembro às 9:12' dateTime='2024-11-08 09:12:40'>Publicado há 1h</time>
